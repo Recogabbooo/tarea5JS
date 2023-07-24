@@ -1,0 +1,70 @@
+let listaCompra = ['Pan', 'Arroz', 'Huevos', 'Jamon', 'Queso'];
+console.log(listaCompra);
+
+listaCompra.push('Aceite de Girasol');
+console.log(listaCompra);
+
+listaCompra.pop('Aceite de Girasol');
+console.log(listaCompra);
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+let peliculasFav = [ {
+    titulo: 'The Matrix',
+    director: 'The Wachowskis',
+    fecha: '1999'
+    },
+    {
+    titulo: 'Zoolander',
+    director: 'Ben Stiller', 
+    fecha: '2001'
+    },
+    {
+    titulo: 'Interstellar',
+    director: 'Christopher Nolan',
+    fecha: '2014'
+    }
+];
+
+console.log(peliculasFav);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Peliculas post 1 de Enero de 2010
+
+let peliculasPost2010 = peliculasFav.filter(pelicula => parseInt(pelicula.fecha) > 2010);
+
+console.log(peliculasPost2010);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Directores de esas peliculas
+
+let directoresPeli = peliculasFav.map(pelicula => pelicula.director);
+
+console.log(directoresPeli);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Titulo Peliculas
+
+let titulosPeliculas = peliculasFav.map(pelicula => pelicula.titulo);
+
+console.log(titulosPeliculas);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Directores y Titulos de las Peliculas
+
+let directores = peliculasFav.map(pelicula => pelicula.director);
+let titulos = peliculasFav.map(pelicula => pelicula.titulo);
+
+let directoresYTitulos = directores.concat(titulos);
+
+console.log(directoresYTitulos);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  lista de directores y la lista de los títulos (utilizando el factor de propagación)
+
+let Directores = peliculasFav.map(pelicula => pelicula.director);
+let Titulos = peliculasFav.map(pelicula => pelicula.titulo);
+
+let DirectoresYTitulos = [...directores, ...titulos];
+
+console.log(directoresYTitulos);
